@@ -1,23 +1,11 @@
-import React, { useRef } from 'react';
-import { useAppDispatch } from '../../store/store';
-import './SearchBlock.scss'
-import { changeCityName } from '../../store/features/weatherReducer';
+import React from 'react';
 import TemperatureSwitcher from '../SwithcerOfMeasure/SwithcerOfMeasure';
-import { useNavigate } from 'react-router-dom';
+import useSearchBlock from './useSearchBlock';
+import './SearchBlock.scss';
 
 function SearchBlock() {
-    const dispatch = useAppDispatch();
-    const inputRef = useRef<HTMLInputElement>(null); // Specify the type of ref
-    const navigate = useNavigate()
-
-    const handleSearchName = () => {
-        if (inputRef.current) {
-            const inputValue = inputRef.current?.value ?? '';
-            navigate(inputValue);
-            dispatch(changeCityName({ name: inputValue }))
-            inputRef.current.value = ''
-        }
-    }
+    
+    const {inputRef, handleSearchName} = useSearchBlock();
 
     return (
         <div className='search_block'>
@@ -26,6 +14,6 @@ function SearchBlock() {
             <TemperatureSwitcher />
         </div>
     );
-}
+};
 
 export default SearchBlock;

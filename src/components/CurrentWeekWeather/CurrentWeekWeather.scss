@@ -27,5 +27,9 @@
         &> :last-child {
             flex: 50% 50%;
         }
+
+        &.active{
+            box-shadow: 5px 10px #888888;
+        }
     }
 }

@@ -3,7 +3,7 @@ import { HomePage, Proxy } from './pages/index';
 
 const routes = [
   { path: "", name: "login", element: <Proxy /> },
-  { path: ":city", name: "login", element: <HomePage /> },
+  { path: ":city/:date", name: "login", element: <HomePage /> },
 ];
 
 export const AppRoutes = () => {

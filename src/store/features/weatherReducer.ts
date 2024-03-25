@@ -26,7 +26,7 @@ export const weatherSlice = createSlice({
                 state.hasError = false;
                 state.weatherOfCurrentTime = action.payload;
             })
-            .addCase(getCurrentDayWeather.rejected, (state, action) => {
+            .addCase(getCurrentDayWeather.rejected, (state) => {
                 state.isLoading = false;
                 state.hasError = true;
             })
@@ -39,7 +39,7 @@ export const weatherSlice = createSlice({
                 state.hasError = false;
                 state.weatherOfAllDay = action.payload;
             })
-            .addCase(getWeekWeather.rejected, (state, action) => {
+            .addCase(getWeekWeather.rejected, (state) => {
                 state.isLoading = false;
                 state.hasError = true;
             });

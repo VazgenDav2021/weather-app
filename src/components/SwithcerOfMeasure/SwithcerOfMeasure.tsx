@@ -5,11 +5,13 @@ import { changeMeasureType } from '../../store/features/weatherReducer';
 
 const TemperatureSwitcher = () => {
     const isCelsius = useAppSelector(basicInfo).selectedWeatherType === "celsius";
+    
     const dispatch = useAppDispatch();
     const handleToggle = () => {
         // @ts-ignore
-        dispatch(changeMeasureType({ name: isCelsius ? "fahrenheit" : "celsius" }))
+        dispatch(changeMeasureType({ name: isCelsius ? "fahrenheit" : "celsius" }));
     };
+    
     return (
         <div>
             <label>

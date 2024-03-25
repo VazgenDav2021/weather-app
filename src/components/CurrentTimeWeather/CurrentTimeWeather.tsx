@@ -4,7 +4,7 @@ import { useReturnTempReture } from '../../hooks/useReturnTempReture';
 import './CurrentTimeWeather.scss';
 
 
-const CurrentTimeWeather = ({ cityName, main, weather }: ICurrnetWimteWeather) => {
+const CurrentTimeWeather = ({ cityName, main, weather, ...rest }: ICurrnetWimteWeather) => {
   const transformedTempreture = useReturnTempReture(main?.temp);
   const weatherType = weather?.main;
 

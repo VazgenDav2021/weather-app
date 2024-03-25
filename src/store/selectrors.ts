@@ -14,7 +14,7 @@ export const basicInfo = createSelector([selectDomain], (info: AppStateInterface
 
 export const weatherOfCurrentTime = createSelector([selectDomain], (info: AppStateInterface): ICurrnetWimteWeather => {
     const { weather, main } = info.weatherOfCurrentTime;
-    return { cityName: info.weatherOfAllDay.city.name, weather: weather[0], main, isLoading: info.isLoading, hasError:info.hasError };
+    return { cityName: info.weatherOfAllDay.city.name, weather: weather[0], main, isLoading: info.isLoading, hasError: info.hasError };
 });
 
 export const selectedMeasureType = createSelector([selectDomain], (info: AppStateInterface): string => {
@@ -57,7 +57,9 @@ export const weatherOfWeek = createSelector([selectDomain], (info: AppStateInter
     const averageTemperatures = Object.entries(groupedData).map(([date, data]) => {
         const averageTemp = data.temps.reduce((sum, temp) => sum + temp, 0) / data.temps.length;
         const icon = data.icons[Math.floor(data.icons.length / 2)]; // Pick the middle icon
+
         return { time: date, temp: averageTemp, icon };
+
     });
 
     return averageTemperatures;

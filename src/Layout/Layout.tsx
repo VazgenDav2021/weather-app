@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
 import { SearchBlock } from '../components';
-import "./Layout.scss"
+import "./Layout.scss";
 
 interface ILayout {
-    children: ReactNode
+    children: ReactNode;
 }
 
 const Layout = ({ children }: ILayout) => {
@@ -15,7 +15,7 @@ const Layout = ({ children }: ILayout) => {
             {children}
         </>
 
-    )
+    );
 };
 
 export default Layout;
