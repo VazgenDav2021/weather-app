@@ -1,0 +1,20 @@
+.current_day_container {
+    min-width: 300px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-height: 200px;
+    overflow: scroll;
+    padding: 20px 25px 20px 20px;
+
+    .each_time_slot {
+        border: none;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+}

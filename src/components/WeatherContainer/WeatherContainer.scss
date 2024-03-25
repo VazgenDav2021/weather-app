@@ -1,0 +1,16 @@
+.weather_container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding-top: 80px;
+    max-width: 1200px;
+    min-width: 800px;
+    align-self: center;
+
+    &> :first-child {
+        grid-column: span 1;
+    }
+
+    &> :last-child {
+        grid-column: span 2;
+    }
+}
